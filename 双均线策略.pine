@@ -1,0 +1,15 @@
+//@version=4
+study("双均线交易策略", overlay=true)
+
+
+fastPeriod = input(title="快线",defval=9,type=input.integer,minval=3)
+slowtPeriod = input(title="慢线",defval=26,type=input.integer,minval=3)
+
+
+fastOver=crossover(close(fastPeriod),close(slowtPeriod))
+fastUnder=crossunder(close(fastPeriod),close(slowtPeriod))
+
+plot(close(fastPeriod),color:color.teal)
+plot(close(slowtPeriod),color:color.red)
+
+
